@@ -1,0 +1,142 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-header);
+  border-bottom: 1px solid #e8ebed;
+  z-index: 1000;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  padding: 0 15px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  padding-left: 15px;
+}
+
+.logo__image {
+  width: 38px;
+  height: 38px;
+}
+
+.logo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo__text {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+/* Search */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 420px;
+  max-width: 100%;
+  height: 40px;
+  padding: 0 16px 0 8px;
+  border-radius: 20px;
+  border: 2px solid rgb(232, 232, 232);
+}
+
+.search__icon {
+  background: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.search__icon-img {
+  width: 100%;
+  height: 100%;
+}
+
+.search__input {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 0 4px;
+  caret-color: #444;
+}
+
+/* Profile */
+.profile {
+  position: relative;
+  display: inline-block;
+  font-family: sans-serif;
+  user-select: none;
+}
+
+.profile__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  padding: 6px;
+  border-radius: 999px;
+  transition: background-color 0.3s;
+}
+
+.profile__toggle:hover {
+  background-color: #e0e0e0;
+}
+
+.profile__avatar {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.profile__item {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.profile__item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Show dropdown on hover */
+.profile:hover .profile__dropdown {
+  display: block;
+}

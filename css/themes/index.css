@@ -1,0 +1,10 @@
+:root {
+  --primary: #ff810e;
+  --primary-rbg: 255, 129, 14;
+  --bg-header: #fff;
+  --bg-footer: #181821;
+}
+
+html.dark {
+  --bg-header: #424242;
+}

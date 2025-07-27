@@ -1,0 +1,91 @@
+{
+  "category": "Layout Widget",
+  "parent": "Flutter",
+  "description": "Các Widget để sắp xếp giao diện trong Flutter",
+  "items": [
+    {
+      "id": "container-1",
+      "title": "Container",
+      "code": "// Container là widget đa năng để tạo hộp chứa với kích thước, màu sắc, căn lề, padding, viền, bo góc, v.v.\nContainer(\n  width: 150, // Chiều rộng của Container\n  height: 150, // Chiều cao của Container\n  padding: EdgeInsets.all(12), // Khoảng cách bên trong giữa nội dung và viền\n  margin: EdgeInsets.symmetric(horizontal: 20), // Khoảng cách bên ngoài Container\n  alignment: Alignment.center, // Căn giữa nội dung con\n  decoration: BoxDecoration(\n    color: Colors.blue, // Màu nền của Container\n    borderRadius: BorderRadius.circular(12), // Bo góc\n    boxShadow: [\n      BoxShadow(\n        color: Colors.black26,\n        blurRadius: 6,\n        offset: Offset(2, 4), // Độ lệch của bóng đổ\n      ),\n    ],\n  ),\n  child: Text(\n    'Box',\n    style: TextStyle(\n      color: Colors.white,\n      fontWeight: FontWeight.bold,\n    ),\n  ),\n);",
+      "description": "Container là widget đa năng để xây dựng layout. Có thể dùng để chỉnh kích thước, màu nền, khoảng cách, viền, bo góc, bóng đổ,...",
+      "tags": [
+        "container",
+        "layout",
+        "padding",
+        "margin",
+        "decoration",
+        "boxshadow"
+      ]
+    },
+    {
+      "id": "row-1",
+      "title": "Row",
+      "code": "// Row dùng để sắp xếp các widget con theo chiều ngang\nRow(\n  mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Canh đều các phần tử theo chiều ngang\n  crossAxisAlignment: CrossAxisAlignment.center, // Canh giữa theo chiều dọc\n  children: [\n    Icon(Icons.star), // Icon ngôi sao\n    Text('Start'), // Văn bản\n    ElevatedButton(\n      onPressed: () {},\n      child: Text('Click'),\n    ),\n  ],\n);",
+      "description": "Row sắp xếp các widget con theo hàng ngang.",
+      "tags": ["row", "layout", "horizontal", "align"]
+    },
+    {
+      "id": "column-1",
+      "title": "Column",
+      "code": "// Column sắp xếp các widget con theo chiều dọc\nColumn(\n  mainAxisAlignment: MainAxisAlignment.center, // Căn giữa theo trục chính (dọc)\n  crossAxisAlignment: CrossAxisAlignment.start, // Canh lề trái theo trục phụ (ngang)\n  children: [\n    Text('Title', style: TextStyle(fontSize: 24)),\n    SizedBox(height: 10), // Khoảng cách\n    Text('Subtitle'),\n  ],\n);",
+      "description": "Column sắp xếp các widget theo chiều dọc, thường dùng để dựng cấu trúc từ trên xuống.",
+      "tags": ["column", "layout", "vertical", "align"]
+    },
+    {
+      "id": "stack-1",
+      "title": "Stack",
+      "code": "// Stack dùng để chồng các widget lên nhau\nStack(\n  children: [\n    Container(\n      width: 200,\n      height: 200,\n      color: Colors.blue,\n    ),\n    Positioned(\n      top: 20,\n      left: 20,\n      child: Icon(Icons.star, size: 40, color: Colors.white),\n    ),\n  ],\n);",
+      "description": "Stack chồng các widget lên nhau, thường dùng kết hợp với Positioned để kiểm soát vị trí.",
+      "tags": ["stack", "positioned", "layout", "overlap"]
+    },
+    {
+      "id": "expanded-1",
+      "title": "Expanded",
+      "code": "// Expanded giúp widget con chiếm toàn bộ không gian còn lại trong trục chính\nRow(\n  children: [\n    Expanded(\n      child: Container(color: Colors.red, height: 50),\n    ),\n    Expanded(\n      child: Container(color: Colors.green, height: 50),\n    ),\n  ],\n);",
+      "description": "Expanded chia đều không gian giữa các widget trong Row hoặc Column.",
+      "tags": ["expanded", "layout", "flex"]
+    },
+    {
+      "id": "padding-1",
+      "title": "Padding",
+      "code": "// Padding tạo khoảng cách xung quanh widget con\nPadding(\n  padding: EdgeInsets.all(16),\n  child: Text('Hello World'),\n);",
+      "description": "Padding tạo khoảng trống bao quanh widget con.",
+      "tags": ["padding", "spacing", "layout"]
+    },
+    {
+      "id": "align-1",
+      "title": "Align",
+      "code": "// Align dùng để căn chỉnh widget con trong một vùng\nAlign(\n  alignment: Alignment.bottomRight,\n  child: Icon(Icons.star),\n);",
+      "description": "Align cho phép căn chỉnh vị trí widget con bên trong vùng cha.",
+      "tags": ["align", "layout", "position"]
+    },
+    {
+      "id": "center-1",
+      "title": "Center",
+      "code": "// Center căn giữa widget con theo cả 2 chiều\nCenter(\n  child: Text('Căn giữa'),\n);",
+      "description": "Center giúp widget con nằm ở giữa widget cha.",
+      "tags": ["center", "layout", "align"]
+    },
+    {
+      "id": "wrap-1",
+      "title": "Wrap",
+      "code": "// Wrap tự động xuống dòng khi không đủ chỗ\nWrap(\n  spacing: 8, // Khoảng cách giữa các phần tử ngang\n  runSpacing: 4, // Khoảng cách giữa các dòng\n  children: List.generate(8, (index) => Chip(label: Text('Item $index'))),\n);",
+      "description": "Wrap sắp xếp widget theo hàng, tự động xuống dòng khi tràn.",
+      "tags": ["wrap", "layout", "flow"]
+    },
+    {
+      "id": "sizedbox-1",
+      "title": "SizedBox",
+      "code": "// SizedBox để tạo kích thước trống hoặc giới hạn kích thước\nSizedBox(\n  width: 100,\n  height: 50,\n  child: ElevatedButton(onPressed: () {}, child: Text('Click')),\n);",
+      "description": "SizedBox được dùng để tạo không gian trống hoặc điều chỉnh kích thước widget.",
+      "tags": ["sizedbox", "layout", "spacing"]
+    },
+    {
+      "id": "spacer-1",
+      "title": "Spacer",
+      "code": "// Spacer dùng để tạo khoảng cách linh hoạt giữa các widget\nRow(\n  children: [\n    Icon(Icons.menu),\n    Spacer(), // Đẩy các phần tử sang hai phía\n    Icon(Icons.settings),\n  ],\n);",
+      "description": "Spacer tạo khoảng cách linh hoạt trong Row/Column mà không cần dùng Expanded + SizedBox.",
+      "tags": ["spacer", "layout", "flex", "spacing"]
+    }
+  ]
+}

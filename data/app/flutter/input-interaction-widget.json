@@ -1,0 +1,77 @@
+{
+  "category": "Input & Interaction",
+  "parent": "Flutter",
+  "description": "Các widget giúp người dùng tương tác như nhập liệu, nhấn nút, chọn lựa,...",
+  "items": [
+    {
+      "id": "textformfield",
+      "title": "TextFormField",
+      "code": "// Trường nhập liệu có xác thực\nTextFormField(\n  decoration: InputDecoration(labelText: 'Email'),\n  validator: (value) => value!.isEmpty ? 'Vui lòng nhập email' : null,\n);",
+      "description": "Trường nhập văn bản với khả năng xác thực (validator).",
+      "tags": ["form", "input", "text"]
+    },
+    {
+      "id": "textfield",
+      "title": "TextField",
+      "code": "// Trường nhập liệu đơn giản\nTextField(\n  decoration: InputDecoration(hintText: 'Nhập tên...'),\n);",
+      "description": "Trường nhập văn bản cơ bản, không tích hợp xác thực.",
+      "tags": ["input", "text", "field"]
+    },
+    {
+      "id": "elevatedbutton",
+      "title": "ElevatedButton",
+      "code": "// Nút nhấn có độ nổi\nElevatedButton(\n  onPressed: () => print('Đã nhấn'),\n  child: Text('Nhấn tôi'),\n);",
+      "description": "Nút chính dùng để xác nhận, gửi form,...",
+      "tags": ["button", "click", "press"]
+    },
+    {
+      "id": "iconbutton",
+      "title": "IconButton",
+      "code": "// Nút nhấn chỉ chứa biểu tượng\nIconButton(\n  icon: Icon(Icons.favorite),\n  onPressed: () => print('Thích'),\n);",
+      "description": "Nút chỉ chứa icon, dùng cho các hành động nhỏ.",
+      "tags": ["button", "icon", "press"]
+    },
+    {
+      "id": "gesture-detector",
+      "title": "GestureDetector",
+      "code": "// Bắt nhiều loại sự kiện chạm\nGestureDetector(\n  onTap: () => print('Tap'),\n  onDoubleTap: () => print('Double Tap'),\n  child: Container(color: Colors.amber, width: 100, height: 100),\n);",
+      "description": "Widget cho phép bắt sự kiện chạm, vuốt, giữ, v.v.",
+      "tags": ["gesture", "tap", "interaction"]
+    },
+    {
+      "id": "checkbox",
+      "title": "Checkbox",
+      "code": "// Tùy chọn checkbox\nCheckbox(\n  value: isChecked,\n  onChanged: (bool? value) {\n    setState(() => isChecked = value!);\n  },\n);",
+      "description": "Hộp chọn đúng/sai (true/false).",
+      "tags": ["checkbox", "form", "input"]
+    },
+    {
+      "id": "switch",
+      "title": "Switch",
+      "code": "// Nút gạt bật/tắt\nSwitch(\n  value: isOn,\n  onChanged: (bool value) {\n    setState(() => isOn = value);\n  },\n);",
+      "description": "Nút bật tắt dạng switch, dùng thay checkbox trong một số trường hợp.",
+      "tags": ["switch", "toggle", "input"]
+    },
+    {
+      "id": "radio",
+      "title": "Radio",
+      "code": "// Chọn 1 trong nhiều tùy chọn\nRadio(\n  value: 1,\n  groupValue: selected,\n  onChanged: (int? value) {\n    setState(() => selected = value!);\n  },\n);",
+      "description": "Tùy chọn radio – chỉ chọn được 1 giá trị trong nhóm.",
+      "tags": ["radio", "form", "select"]
+    },
+    {
+      "id": "dropdownbutton",
+      "title": "DropdownButton",
+      "code": "// Menu chọn thả xuống\nDropdownButton<String>(\n  value: selectedItem,\n  items: ['A', 'B', 'C'].map((item) => DropdownMenuItem(value: item, child: Text(item))).toList(),\n  onChanged: (value) => setState(() => selectedItem = value!),\n);",
+      "description": "Tạo menu chọn từ danh sách giá trị.",
+      "tags": ["dropdown", "select", "menu"]
+    },
+    {
+      "id": "slider",
+      "title": "Slider",
+      "code": "// Thanh trượt chọn giá trị\nSlider(\n  value: sliderValue,\n  onChanged: (newValue) => setState(() => sliderValue = newValue),\n  min: 0,\n  max: 100,\n);",
+      "description": "Chọn giá trị trong khoảng bằng thanh trượt.",
+      "tags": ["slider", "range", "input"]
+    }
+  ]
+}

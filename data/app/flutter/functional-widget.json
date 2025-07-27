@@ -1,0 +1,49 @@
+{
+  "category": "Functional (App structure)",
+  "parent": "Flutter",
+  "description": "Các widget đóng vai trò khung và cấu trúc chính của ứng dụng Flutter.",
+  "items": [
+    {
+      "id": "materialapp-1",
+      "title": "MaterialApp",
+      "code": "// MaterialApp là widget gốc tạo nên cấu trúc cơ bản của app\nMaterialApp(\n  title: 'Ứng dụng Flutter Demo',\n  theme: ThemeData(\n    primarySwatch: Colors.teal, // Màu chủ đạo\n  ),\n  home: MyHomePage(), // Màn hình đầu tiên khi app chạy\n);",
+      "description": "Widget gốc khởi tạo ứng dụng theo chuẩn Material Design.",
+      "tags": ["app", "structure", "material", "root"]
+    },
+    {
+      "id": "scaffold-1",
+      "title": "Scaffold",
+      "code": "// Scaffold tạo bố cục cơ bản: AppBar, body, FAB, Drawer...\nScaffold(\n  appBar: AppBar(\n    title: Text('Trang chủ'),\n  ),\n  body: Center(\n    child: Text('Nội dung chính'),\n  ),\n  floatingActionButton: FloatingActionButton(\n    onPressed: () {},\n    child: Icon(Icons.add),\n  ),\n);",
+      "description": "Tạo bố cục chính cho một màn hình trong ứng dụng.",
+      "tags": ["scaffold", "layout", "structure", "screen"]
+    },
+    {
+      "id": "appbar-1",
+      "title": "AppBar",
+      "code": "// AppBar là thanh tiêu đề ở đầu màn hình\nAppBar(\n  title: Text('Tiêu đề trang'),\n  actions: [\n    IconButton(\n      icon: Icon(Icons.settings),\n      onPressed: () {},\n    ),\n  ],\n);",
+      "description": "Thanh tiêu đề nằm phía trên màn hình, hỗ trợ tiêu đề và các hành động.",
+      "tags": ["appbar", "header", "navigation", "top"]
+    },
+    {
+      "id": "bottomnavigationbar-1",
+      "title": "BottomNavigationBar",
+      "code": "// Thanh điều hướng dưới đáy màn hình\nBottomNavigationBar(\n  currentIndex: 0,\n  onTap: (index) {\n    // xử lý khi bấm vào tab\n  },\n  items: [\n    BottomNavigationBarItem(\n      icon: Icon(Icons.home),\n      label: 'Trang chủ',\n    ),\n    BottomNavigationBarItem(\n      icon: Icon(Icons.person),\n      label: 'Tài khoản',\n    ),\n  ],\n);",
+      "description": "Thanh điều hướng chính dưới cùng, dùng cho tab màn hình chính.",
+      "tags": ["navigation", "bottom", "tabs", "menu"]
+    },
+    {
+      "id": "drawer-1",
+      "title": "Drawer",
+      "code": "// Drawer là menu bên trái trượt vào\nDrawer(\n  child: ListView(\n    children: [\n      DrawerHeader(\n        decoration: BoxDecoration(color: Colors.blue),\n        child: Text('Xin chào bạn!'),\n      ),\n      ListTile(\n        title: Text('Trang chủ'),\n        leading: Icon(Icons.home),\n        onTap: () {},\n      ),\n    ],\n  ),\n);",
+      "description": "Tạo menu bên hông trái, thường dùng để chuyển màn hình hoặc cài đặt.",
+      "tags": ["drawer", "menu", "side", "navigation"]
+    },
+    {
+      "id": "safearea-1",
+      "title": "SafeArea",
+      "code": "// SafeArea tránh vùng bị che bởi tai thỏ, status bar...\nSafeArea(\n  child: Text('Nội dung an toàn!'),\n);",
+      "description": "Đảm bảo widget không bị che bởi các vùng hệ thống như notch hoặc thanh trạng thái.",
+      "tags": ["safe", "padding", "system", "area"]
+    }
+  ]
+}

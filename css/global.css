@@ -1,0 +1,26 @@
+@import "./base/reset.css";
+@import "./themes/index.css";
+@import "./base/grid-system.css";
+@import "./layouts/index.css";
+@import "./pages/home.css";
+@import "./pages/frontend.css";
+@import "./pages/backend.css";
+@import "./pages/mobile-app.css";
+
+/* BASE */
+:root {
+  --family-primary: "Montserrat", sans-serif;
+  --family-second: "Kanit", sans-serif;
+}
+
+/* SPA Transition Effects */
+.content {
+  flex: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Ensure main content is not hidden by fixed header */
+.main {
+  margin-top: 66px;
+  min-height: calc(100vh - 66px);
+}

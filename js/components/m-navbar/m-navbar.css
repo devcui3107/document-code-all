@@ -1,0 +1,85 @@
+@import url("../../../css/base/reset.css");
+
+.nav {
+  width: 70px;
+  background: var(--bg-header);
+}
+
+@media (max-width: 576px) {
+  .nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .nav__inner {
+    width: 100%;
+  }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 70px;
+  border-radius: 20px;
+  color: #1a1a1a;
+}
+
+.nav__item.active {
+  width: 70px;
+  background: #e8ebed;
+}
+
+.nav__item:hover {
+  background: #f0f0f0;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__link {
+  cursor: pointer;
+}
+
+.nav__item:not(:first-child) {
+  margin-top: 16px;
+}
+@media (max-width: 576px) {
+  .nav__item:not(:first-child) {
+    margin-top: 0;
+  }
+}
+
+.nav__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.nav__icon-img {
+  width: 100%;
+  height: 100%;
+}
+
+.nav__text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 8px;
+}

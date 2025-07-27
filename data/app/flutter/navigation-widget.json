@@ -1,0 +1,56 @@
+{
+  "category": "Navigation",
+  "parent": "Flutter",
+  "description": "Quản lý điều hướng giữa các màn hình, chuyển tab, gửi dữ liệu qua lại.",
+  "items": [
+    {
+      "id": "navigator-push",
+      "title": "Navigator.push",
+      "code": "// Chuyển sang màn hình mới (đẩy vào stack)\nNavigator.push(\n  context,\n  MaterialPageRoute(builder: (context) => SecondPage()),\n);",
+      "description": "Chuyển màn hình bằng cách đẩy route mới vào stack.",
+      "tags": ["navigation", "push", "screen", "route"]
+    },
+    {
+      "id": "navigator-pop",
+      "title": "Navigator.pop",
+      "code": "// Trở về màn hình trước (rút khỏi stack)\nNavigator.pop(context);",
+      "description": "Trở về màn hình trước đó bằng cách pop route hiện tại.",
+      "tags": ["navigation", "pop", "back", "return"]
+    },
+    {
+      "id": "navigator-pushnamed",
+      "title": "Navigator.pushNamed",
+      "code": "// Điều hướng bằng tên route (phải cấu hình trước)\nNavigator.pushNamed(context, '/second');",
+      "description": "Điều hướng theo tên route đã khai báo trong MaterialApp.",
+      "tags": ["named route", "navigation", "push"]
+    },
+    {
+      "id": "navigator-popwithresult",
+      "title": "Navigator.pop (trả kết quả)",
+      "code": "// Trả kết quả về màn hình trước\nNavigator.pop(context, 'Dữ liệu trả về');",
+      "description": "Trả dữ liệu về màn hình trước khi pop route.",
+      "tags": ["navigation", "pop", "result"]
+    },
+    {
+      "id": "bottomnavigationbar-navigation",
+      "title": "BottomNavigationBar (chuyển tab)",
+      "code": "// Điều hướng bằng thanh tab dưới cùng\nBottomNavigationBar(\n  currentIndex: selectedIndex,\n  onTap: (index) {\n    setState(() => selectedIndex = index);\n  },\n  items: const [\n    BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),\n    BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Cài đặt'),\n  ],\n);",
+      "description": "Thanh điều hướng dưới cùng để chuyển đổi giữa các tab.",
+      "tags": ["bottom", "tab", "navigation"]
+    },
+    {
+      "id": "tabbar-tabbarview",
+      "title": "TabBar + TabBarView",
+      "code": "// TabBar cho tiêu đề tab, TabBarView cho nội dung từng tab\nDefaultTabController(\n  length: 3,\n  child: Scaffold(\n    appBar: AppBar(\n      bottom: TabBar(\n        tabs: [Tab(text: 'A'), Tab(text: 'B'), Tab(text: 'C')],\n      ),\n    ),\n    body: TabBarView(\n      children: [Text('Tab A'), Text('Tab B'), Text('Tab C')],\n    ),\n  ),\n);",
+      "description": "Tạo thanh tab tiêu đề phía trên cùng với nội dung tương ứng.",
+      "tags": ["tab", "navigation", "controller"]
+    },
+    {
+      "id": "pageview",
+      "title": "PageView",
+      "code": "// Chuyển trang theo dạng cuộn ngang\nPageView(\n  children: [\n    Container(color: Colors.red),\n    Container(color: Colors.green),\n    Container(color: Colors.blue),\n  ],\n);",
+      "description": "Tạo các trang cuộn ngang như carousel hoặc onboarding.",
+      "tags": ["page", "swipe", "view", "scroll"]
+    }
+  ]
+}

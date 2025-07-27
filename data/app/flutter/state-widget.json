@@ -1,0 +1,63 @@
+{
+  "category": "State, Async & Animation",
+  "parent": "Flutter",
+  "description": "Các widget và lớp xử lý trạng thái, dữ liệu bất đồng bộ, và hiệu ứng chuyển động.",
+  "items": [
+    {
+      "id": "setstate",
+      "title": "setState",
+      "code": "// Cập nhật giao diện khi state thay đổi\nsetState(() {\n  counter++;\n});",
+      "description": "Phương thức cơ bản để cập nhật giao diện khi dữ liệu thay đổi.",
+      "tags": ["state", "ui", "refresh"]
+    },
+    {
+      "id": "futurebuilder",
+      "title": "FutureBuilder",
+      "code": "// Dựng UI theo dữ liệu bất đồng bộ\nFutureBuilder(\n  future: fetchData(),\n  builder: (context, snapshot) {\n    if (snapshot.connectionState == ConnectionState.waiting) {\n      return CircularProgressIndicator();\n    } else if (snapshot.hasError) {\n      return Text('Lỗi: ${snapshot.error}');\n    } else {\n      return Text('Dữ liệu: ${snapshot.data}');\n    }\n  },\n);",
+      "description": "Widget xử lý Future (dữ liệu bất đồng bộ) và dựng UI tương ứng.",
+      "tags": ["future", "async", "loading"]
+    },
+    {
+      "id": "streambuilder",
+      "title": "StreamBuilder",
+      "code": "// Theo dõi luồng dữ liệu liên tục\nStreamBuilder<int>(\n  stream: counterStream(),\n  builder: (context, snapshot) {\n    return Text('Giá trị: ${snapshot.data ?? 0}');\n  },\n);",
+      "description": "Lắng nghe luồng dữ liệu và cập nhật UI liên tục.",
+      "tags": ["stream", "realtime", "builder"]
+    },
+    {
+      "id": "animatedcontainer",
+      "title": "AnimatedContainer",
+      "code": "// Container chuyển động mượt khi thay đổi giá trị\nAnimatedContainer(\n  duration: Duration(seconds: 1),\n  width: isExpanded ? 200 : 100,\n  color: isExpanded ? Colors.green : Colors.red,\n  child: Text('Chuyển động'),\n);",
+      "description": "Tự động animate khi thay đổi các thuộc tính như size, color,...",
+      "tags": ["animation", "container", "transition"]
+    },
+    {
+      "id": "animatedopacity",
+      "title": "AnimatedOpacity",
+      "code": "// Thay đổi độ mờ dần\nAnimatedOpacity(\n  duration: Duration(milliseconds: 500),\n  opacity: isVisible ? 1.0 : 0.0,\n  child: Text('Hiển thị ẩn'),\n);",
+      "description": "Tạo hiệu ứng ẩn/hiện mượt bằng cách thay đổi độ mờ.",
+      "tags": ["animation", "opacity", "fade"]
+    },
+    {
+      "id": "animationcontroller",
+      "title": "AnimationController",
+      "code": "// Khởi tạo trong State\nlate AnimationController _controller;\n\n@override\nvoid initState() {\n  super.initState();\n  _controller = AnimationController(\n    duration: const Duration(seconds: 2),\n    vsync: this,\n  )..repeat(reverse: true);\n}",
+      "description": "Điều khiển hoạt ảnh tùy chỉnh: tốc độ, lặp lại, dừng, tiến/lùi.",
+      "tags": ["controller", "animation", "custom"]
+    },
+    {
+      "id": "tweenanimationbuilder",
+      "title": "TweenAnimationBuilder",
+      "code": "// Animate giá trị số hoặc màu\nTweenAnimationBuilder<double>(\n  tween: Tween(begin: 0, end: 1),\n  duration: Duration(seconds: 1),\n  builder: (context, value, child) {\n    return Opacity(opacity: value, child: child);\n  },\n  child: Text('Fade in'),\n);",
+      "description": "Tạo hiệu ứng mượt mà với Tween mà không cần controller.",
+      "tags": ["tween", "animation", "builder"]
+    },
+    {
+      "id": "animatedbuilder",
+      "title": "AnimatedBuilder",
+      "code": "// Kết hợp với AnimationController\nAnimatedBuilder(\n  animation: _controller,\n  builder: (context, child) {\n    return Transform.rotate(\n      angle: _controller.value * 2 * 3.14,\n      child: child,\n    );\n  },\n  child: Icon(Icons.sync),\n);",
+      "description": "Cho phép dựng UI theo animation controller.",
+      "tags": ["animation", "builder", "custom"]
+    }
+  ]
+}
