@@ -32,6 +32,13 @@
       "tags": ["card", "container", "style", "elevation"]
     },
     {
+      "id": "listtile-1",
+      "title": "ListTile",
+      "code": "// ListTile là widget thường dùng trong ListView để hiển thị 1 item\nListTile(\n  leading: Icon(Icons.music_note), // Icon đầu dòng\n  title: Text('Bài hát'), // Tiêu đề chính\n  subtitle: Text('Ca sĩ ABC'), // Phụ đề nhỏ\n  trailing: Icon(Icons.more_vert), // Icon cuối dòng\n  onTap: () { print('Đã nhấn'); }, // Hành động khi nhấn\n);",
+      "description": "ListTile là widget dạng hàng, thường dùng trong danh sách để hiển thị thông tin theo dòng có cấu trúc rõ ràng.",
+      "tags": ["listtile", "list", "display", "tile", "item"]
+    },
+    {
       "id": "divider-1",
       "title": "Divider",
       "code": "// Divider là đường kẻ ngang chia cách các phần\nDivider(\n  color: Colors.grey, // Màu của đường kẻ\n  thickness: 1.5, // Độ dày đường kẻ\n  indent: 20, // Lề trái\n  endIndent: 20, // Lề phải\n);",
@@ -44,6 +51,48 @@
       "code": "// Opacity giúp điều chỉnh độ trong suốt của widget\nOpacity(\n  opacity: 0.5, // Mức độ hiển thị (0 là trong suốt, 1 là rõ)\n  child: Icon(\n    Icons.visibility,\n    size: 48,\n    color: Colors.blue,\n  ),\n);",
       "description": "Điều chỉnh độ mờ (opacity) cho widget con.",
       "tags": ["opacity", "style", "visibility", "fade"]
+    },
+    {
+      "id": "chip-1",
+      "title": "Chip",
+      "code": "// Chip hiển thị nhãn ngắn kèm icon hoặc nút xóa\nChip(\n  label: Text('Flutter'),\n  avatar: CircleAvatar(\n    backgroundColor: Colors.blue,\n    child: Text('F'),\n  ),\n  onDeleted: () {\n    print('Xóa chip');\n  },\n);",
+      "description": "Chip là một widget nhỏ gọn dùng để hiển thị nhãn, avatar, và nút xóa. Thường dùng để gắn thẻ, bộ lọc hoặc hành động.",
+      "tags": ["chip", "label", "avatar", "delete", "compact", "tag"]
+    },
+    {
+      "id": "circleavatar-1",
+      "title": "CircleAvatar",
+      "code": "// CircleAvatar hiển thị hình tròn với ảnh hoặc chữ bên trong\nCircleAvatar(\n  radius: 30,\n  backgroundImage: NetworkImage('https://example.com/avatar.png'),\n);",
+      "description": "CircleAvatar là widget để hiển thị ảnh đại diện hình tròn. Có thể hiển thị ảnh, màu nền, hoặc chữ cái.",
+      "tags": ["avatar", "circle", "image", "profile", "user"]
+    },
+    {
+      "id": "tooltip-1",
+      "title": "Tooltip",
+      "code": "// Tooltip hiển thị mô tả khi hover hoặc long-press\nTooltip(\n  message: 'Cài đặt',\n  child: Icon(Icons.settings),\n);",
+      "description": "Tooltip hiển thị nội dung mô tả ngắn gọn khi người dùng di chuột hoặc nhấn giữ lâu lên widget.",
+      "tags": ["tooltip", "hint", "hover", "longpress", "description"]
+    },
+    {
+      "id": "badge-1",
+      "title": "Badge",
+      "code": "// Badge hiển thị thông báo nhỏ trên icon\nBadge(\n  label: Text('3'),\n  child: Icon(Icons.notifications),\n);",
+      "description": "Badge dùng để hiển thị số lượng thông báo hoặc trạng thái nhỏ gắn kèm với icon, thường thấy trong thanh điều hướng hoặc giỏ hàng.",
+      "tags": ["badge", "notification", "label", "icon", "count"]
+    },
+    {
+      "id": "progressindicator-1",
+      "title": "ProgressIndicator",
+      "code": "// CircularProgressIndicator: hiển thị tiến trình tròn\nCircularProgressIndicator(),\n\n// LinearProgressIndicator: tiến trình dạng thanh ngang\nLinearProgressIndicator(value: 0.6),",
+      "description": "ProgressIndicator được dùng để hiển thị trạng thái tải tiến trình. Có hai dạng: Circular và Linear. Có thể ở dạng vô hạn hoặc có giá trị cụ thể.",
+      "tags": [
+        "progress",
+        "loading",
+        "indicator",
+        "circular",
+        "linear",
+        "spinner"
+      ]
     }
   ]
 }

@@ -1,3 +1,5 @@
+import { getAssetPath, fixHtmlPaths } from "../../utils/path-helper.js";
+
 export class HeaderComponent extends HTMLElement {
   constructor() {
     super();
@@ -46,17 +48,19 @@ export class HeaderComponent extends HTMLElement {
     try {
       // Load CSS
       const cssResponse = await fetch(
-        "../../js/components/m-header/m-header.css"
+        getAssetPath("/js/components/m-header/m-header.css")
       );
       const cssText = await cssResponse.text();
 
       // Load HTML template
-      const htmlResponse = await fetch("../../templates/m-header.html");
+      const htmlResponse = await fetch(
+        getAssetPath("/templates/m-header.html")
+      );
       const htmlText = await htmlResponse.text();
 
       this.shadowRoot.innerHTML = `
         <style>${cssText}</style>
-        ${htmlText}
+        ${fixHtmlPaths(htmlText)}
       `;
     } catch (error) {
       console.error("Error loading m-header component:", error);

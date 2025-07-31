@@ -32,6 +32,13 @@
       "tags": ["column", "layout", "vertical", "align"]
     },
     {
+      "id": "listview-1",
+      "title": "ListView",
+      "code": "// ListView là widget cuộn theo chiều dọc hoặc ngang\nListView(\n  scrollDirection: Axis.vertical, // Cuộn dọc (mặc định) hoặc ngang\n  reverse: false, // Đảo ngược thứ tự hiển thị\n  padding: EdgeInsets.all(16), // Padding cho toàn bộ danh sách\n  shrinkWrap: false, // Cho phép co lại nếu nằm trong widget cuộn khác\n  physics: BouncingScrollPhysics(), // Hiệu ứng cuộn (iOS style ở đây)\n  children: [\n    ListTile(title: Text('Item 1')),\n    Divider(),\n    ListTile(title: Text('Item 2')),\n    Divider(),\n    ListTile(title: Text('Item 3')),\n  ],\n);",
+      "description": "ListView tạo danh sách có thể cuộn được, rất hữu ích cho danh sách dài các phần tử.",
+      "tags": ["list", "scroll", "layout", "listview", "vertical", "horizontal"]
+    },
+    {
       "id": "stack-1",
       "title": "Stack",
       "code": "// Stack dùng để chồng các widget lên nhau\nStack(\n  children: [\n    Container(\n      width: 200,\n      height: 200,\n      color: Colors.blue,\n    ),\n    Positioned(\n      top: 20,\n      left: 20,\n      child: Icon(Icons.star, size: 40, color: Colors.white),\n    ),\n  ],\n);",
@@ -44,6 +51,13 @@
       "code": "// Expanded giúp widget con chiếm toàn bộ không gian còn lại trong trục chính\nRow(\n  children: [\n    Expanded(\n      child: Container(color: Colors.red, height: 50),\n    ),\n    Expanded(\n      child: Container(color: Colors.green, height: 50),\n    ),\n  ],\n);",
       "description": "Expanded chia đều không gian giữa các widget trong Row hoặc Column.",
       "tags": ["expanded", "layout", "flex"]
+    },
+    {
+      "id": "flexible-1",
+      "title": "Flexible",
+      "code": "// Flexible cho phép widget con co giãn linh hoạt theo không gian\nRow(\n  children: [\n    Flexible(\n      flex: 2, // Chia tỷ lệ 2 phần\n      child: Container(\n        color: Colors.red,\n        height: 50,\n      ),\n    ),\n    Flexible(\n      flex: 1, // Chia tỷ lệ 1 phần\n      child: Container(\n        color: Colors.green,\n        height: 50,\n      ),\n    ),\n  ],\n);",
+      "description": "Flexible cho phép widget con co giãn hoặc thu gọn lại theo tỷ lệ trong Row hoặc Column. Khác với Expanded ở chỗ nó không bắt buộc phải lấp đầy không gian còn lại.",
+      "tags": ["flexible", "layout", "row", "column", "flex", "responsive"]
     },
     {
       "id": "padding-1",

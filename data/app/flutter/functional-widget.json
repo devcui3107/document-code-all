@@ -20,7 +20,7 @@
     {
       "id": "appbar-1",
       "title": "AppBar",
-      "code": "// AppBar là thanh tiêu đề ở đầu màn hình\nAppBar(\n  title: Text('Tiêu đề trang'),\n  actions: [\n    IconButton(\n      icon: Icon(Icons.settings),\n      onPressed: () {},\n    ),\n  ],\n);",
+      "code": "// AppBar là thanh tiêu đề ở đầu màn hình\nAppBar(\n  title: Text('Tiêu đề trang'),\n  toolbarHeight: 56.0,\n  actions: [\n    IconButton(\n      icon: Icon(Icons.settings),\n      onPressed: () {},\n    ),\n  ],\n);",
       "description": "Thanh tiêu đề nằm phía trên màn hình, hỗ trợ tiêu đề và các hành động.",
       "tags": ["appbar", "header", "navigation", "top"]
     },

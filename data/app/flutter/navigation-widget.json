@@ -51,6 +51,41 @@
       "code": "// Chuyển trang theo dạng cuộn ngang\nPageView(\n  children: [\n    Container(color: Colors.red),\n    Container(color: Colors.green),\n    Container(color: Colors.blue),\n  ],\n);",
       "description": "Tạo các trang cuộn ngang như carousel hoặc onboarding.",
       "tags": ["page", "swipe", "view", "scroll"]
+    },
+    {
+      "id": "navigator-replacement",
+      "title": "Navigator.pushReplacement",
+      "code": "// Thay thế màn hình hiện tại bằng màn hình mới\nNavigator.pushReplacement(\n  context,\n  MaterialPageRoute(builder: (context) => NewPage()),\n);",
+      "description": "Thay thế màn hình hiện tại bằng một màn hình mới mà không giữ lại trong stack.",
+      "tags": ["navigation", "replace", "pushReplacement"]
+    },
+    {
+      "id": "navigator-pushandremoveuntil",
+      "title": "Navigator.pushAndRemoveUntil",
+      "code": "// Xóa toàn bộ stack trước đó\nNavigator.pushAndRemoveUntil(\n  context,\n  MaterialPageRoute(builder: (context) => HomePage()),\n  (Route<dynamic> route) => false,\n);",
+      "description": "Điều hướng đến màn hình mới và xóa toàn bộ stack trước đó.",
+      "tags": ["navigation", "reset", "removeUntil", "push"]
+    },
+    {
+      "id": "drawer-navigation",
+      "title": "Drawer (Menu trượt ngang)",
+      "code": "// Menu trượt từ cạnh bên\nScaffold(\n  drawer: Drawer(\n    child: ListView(\n      children: const [\n        DrawerHeader(child: Text('Header')),\n        ListTile(title: Text('Trang chủ')),\n      ],\n    ),\n  ),\n);",
+      "description": "Drawer là menu điều hướng ẩn, có thể kéo ra từ cạnh trái.",
+      "tags": ["navigation", "drawer", "menu", "sidebar"]
+    },
+    {
+      "id": "navigation-rail",
+      "title": "NavigationRail (Menu dọc)",
+      "code": "// Menu điều hướng dọc thường dùng trên tablet/desktop\nNavigationRail(\n  selectedIndex: selectedIndex,\n  onDestinationSelected: (index) => setState(() => selectedIndex = index),\n  destinations: const [\n    NavigationRailDestination(\n      icon: Icon(Icons.home), label: Text('Home')),\n    NavigationRailDestination(\n      icon: Icon(Icons.settings), label: Text('Settings')),\n  ],\n);",
+      "description": "Thanh điều hướng dọc phù hợp với tablet hoặc màn hình rộng.",
+      "tags": ["navigation", "rail", "vertical", "tablet"]
+    },
+    {
+      "id": "go-router",
+      "title": "GoRouter (Package)",
+      "code": "// Sử dụng go_router để điều hướng hiện đại\nfinal GoRouter _router = GoRouter(\n  routes: [\n    GoRoute(path: '/', builder: (context, state) => HomePage()),\n    GoRoute(path: '/detail', builder: (context, state) => DetailPage()),\n  ],\n);",
+      "description": "Thư viện điều hướng chính thức từ Flutter hỗ trợ deep linking, declarative route.",
+      "tags": ["navigation", "go_router", "package", "route"]
     }
   ]
 }
