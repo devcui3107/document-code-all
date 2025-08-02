@@ -1,5 +1,3 @@
-import { getAssetPath, fixHtmlPaths } from "../../utils/path-helper.js";
-
 export class HomePageContent extends HTMLElement {
   constructor() {
     super();
@@ -13,12 +11,12 @@ export class HomePageContent extends HTMLElement {
   async render() {
     try {
       const cssResponse = await fetch(
-        getAssetPath("/js/components/m-home-page/m-home-page.css")
+        "../../js/components/m-home-page/m-home-page.css"
       );
       const cssText = await cssResponse.text();
 
       const htmlResponse = await fetch(
-        getAssetPath("/templates/pages/m-home-page.html")
+        "../../templates/pages/m-home-page.html"
       );
       const htmlText = await htmlResponse.text();
 

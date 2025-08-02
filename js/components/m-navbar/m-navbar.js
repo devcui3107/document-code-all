@@ -1,5 +1,3 @@
-import { getAssetPath, fixHtmlPaths } from "../../utils/path-helper.js";
-
 export class NavbarComponent extends HTMLElement {
   constructor() {
     super();
@@ -13,18 +11,16 @@ export class NavbarComponent extends HTMLElement {
   async render() {
     try {
       const cssResponse = await fetch(
-        getAssetPath("/js/components/m-navbar/m-navbar.css")
+        "../../js/components/m-navbar/m-navbar.css"
       );
       const cssText = await cssResponse.text();
 
-      const htmlResponse = await fetch(
-        getAssetPath("/templates/m-navbar.html")
-      );
+      const htmlResponse = await fetch("../../templates/m-navbar.html");
       const htmlText = await htmlResponse.text();
 
       this.shadowRoot.innerHTML = `
         <style>${cssText}</style>
-        ${fixHtmlPaths(htmlText)}
+        ${htmlText}
       `;
 
       // Set active nav item based on current path
